@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="wrap" role="application" aria-labelledby="app-title">
+    <header>
+      <div>
+        <h1 id="app-title">Habit Tracker</h1>
+        <div class="meta small">users can, add task, mark as done and watch progress update live</div>
+      </div>
+      <div class="small muted" id="date-display"></div>
+    </header>
+
+    <section class="progress-wrap" aria-hidden="false">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div class="small">Daily Progress</div>
+        <div class="small muted" id="progress-text">0 / 0</div>
+      </div>
+      <div class="progress-meter" aria-hidden="false" aria-label="progress">
+        <div class="progress-fill" id="progress-fill">0%</div>
+      </div>
+    </section>
+
+    <ul class="habits" id="habit-list" aria-live="polite"></ul>
+
+    <div class="add-bar" style="margin-top:14px">
+      <input id="habit-input"  aria-label="New habit" />
+      <button id="add-btn">Add Habit</button>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+      <div class="small muted">Saved locally — no account required.</div>
+      <div style="display:flex;gap:8px">
+        <button class="btn" id="clear-done">Clear completed</button>
+        <button class="btn danger" id="reset-all">Reset all</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js">
+
+  </script>
+</body>
+</html>
