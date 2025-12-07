@@ -1,0 +1,130 @@
+  
+    /* --- Basic layout --- */
+    :root{
+      --bg:#f4f6f8;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --good:#10b981;
+      --danger:#ef4444;
+      --glass: rgba(0,0,0,0.05);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--bg),#eef2f7);
+      padding:28px;
+      color:#0f172a;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .wrap{
+      width:100%;
+      max-width:720px;
+      background:var(--card);
+      box-shadow: 0 8px 30px rgba(15,23,42,0.08);
+      padding:22px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:16px;
+    }
+    header h1{margin:0;font-size:20px;letter-spacing:-0.2px}
+    header .meta{color:var(--muted);font-size:13px}
+
+    /* Progress */
+    .progress-wrap{margin:12px 0 20px}
+    .progress-meter{
+      height:18px;
+      background:var(--glass);
+      border-radius:999px;
+      overflow:hidden;
+      position:relative;
+      border:1px solid rgba(15,23,42,0.04);
+    }
+    .progress-fill{
+      position:absolute;
+      left:0;top:0;bottom:0;
+      width:0%;
+      background: linear-gradient(90deg,#34d399,#10b981);
+      transition:width 260ms ease;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      padding-right:8px;
+      color:white;
+      font-weight:600;
+      font-size:12px;
+    }
+
+    /* List */
+    ul.habits{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    li.habit{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:12px;
+      border-radius:10px;
+      background:linear-gradient(180deg,rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+      border:1px solid rgba(15,23,42,0.03);
+    }
+    .habit .left{display:flex;align-items:center;gap:12px;flex:1}
+    .habit label{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .checkbox{
+      width:20px;height:20px;border-radius:6px;border:2px solid rgba(15,23,42,0.12);
+      display:inline-grid;place-items:center;
+      transition: all 160ms ease;
+    }
+    .checkbox.checked{background:linear-gradient(90deg,#60a5fa,#3b82f6);border-color:transparent;color:white}
+    .habit-name{font-weight:600}
+    .habit-name.done{color:var(--muted);text-decoration:line-through;font-weight:600}
+
+    .controls{display:flex;gap:8px;align-items:center}
+    .btn{
+      background:transparent;border:1px solid rgba(15,23,42,0.06);
+      padding:6px 10px;border-radius:8px;font-size:13px;cursor:pointer;
+    }
+    .btn.danger{border-color:rgba(239,68,68,0.12);color:var(--danger)}
+    .btn.icon{padding:6px;border-radius:8px;font-size:14px}
+
+    /* Add area */
+    .add-bar{display:flex;gap:10px;margin-top:18px}
+    .add-bar input{
+      flex:1;padding:10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);
+      font-size:14px;
+    }
+    .add-bar button{
+      padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:600;
+      cursor:pointer;
+    }
+
+    .small{font-size:13px;color:var(--muted)}
+    .muted{color:var(--muted)}
+
+    /* responsiveness */
+    @media (max-width:520px){
+      body{padding:16px}
+      .wrap{padding:16px}
+      header h1{font-size:18px}
+    }
+
+    /* subtle animation when checking */
+    .check-anim{
+      transform:scale(0.9);
+      transition: transform 160ms ease;
+    }
+    .check-anim.pop{transform:scale(1.06)}
+  
